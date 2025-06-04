@@ -157,14 +157,23 @@ func sequentialSearch(A tabProyek, n int) {
 }
 
 func selectionSort(A *tabProyek, n int) {
-	for i := 0; i < n-1; i++ {
-		maxIdx := i
-		for j := i + 1; j < n; j++ {
-			if A[j].donasi > A[maxIdx].donasi {
-				maxIdx = j
+	var pass, idx, i int
+	var temp proyek
+	
+	pass = 1
+	for pass <= n-1 {
+		idx = pass - 1
+		i = pass
+		for i < n {
+			if A[i].donasi > A[idx].donasi {
+				idx = i
 			}
+			i = i + 1
 		}
-		A[i], A[maxIdx] = A[maxIdx], A[i]
+		temp = A[pass-1]
+		A[pass-1] = A[idx]
+		A[idx] = temp
+		pass = pass+1
 	}
 	tampilkanSemuaProyek(data, nData)
 }
