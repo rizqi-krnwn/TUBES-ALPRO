@@ -129,8 +129,8 @@ func binarySearch(A tabProyek, n int) {
 	for kiri <= kanan {
 		tengah := (kiri + kanan) / 2
 		if A[tengah].nama == nama {
-			fmt.Printf("DITEMUKAN: %s (Target: %d, Donasi: %d)\n",
-				A[tengah].nama, A[tengah].target, A[tengah].donasi)
+			fmt.Printf("DITEMUKAN: %s (TARGET: %d, DONASI: %d, DONATUR: %d)\n",
+				A[tengah].nama, A[tengah].target, A[tengah].donasi, A[tengah].donatur)
 			return
 		} else if A[tengah].nama < nama {
 			kiri = tengah + 1
