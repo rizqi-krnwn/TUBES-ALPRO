@@ -8,15 +8,11 @@ type proyek struct {
 }
 
 type tabProyek [NMAX]proyek 
-var data tabProyek
-var nData int
+
 
 func main() {
-	menu()
-}
-
-func menu() {
-	
+	var data tabProyek
+	var nData int
 	var pilihan int
 	
 	for pilihan != 11 {
@@ -49,8 +45,10 @@ func menu() {
 				binarySearch(data, nData)
 			case 6:
 				selectionSort(&data, nData)
+				tampilkanSemuaProyek(data, nData)
 			case 7:
 				insertionSort(&data, nData)
+				tampilkanSemuaProyek(data, nData)
 			case 8:
 				tampilkanProyekYangSudahMencapaiTarget(data, nData)
 			case 9:
@@ -175,7 +173,6 @@ func selectionSort(A *tabProyek, n int) {
 		A[idx] = temp
 		pass = pass+1
 	}
-	tampilkanSemuaProyek(data, nData)
 }
 
 func insertionSort(A *tabProyek, n int) {
@@ -193,7 +190,6 @@ func insertionSort(A *tabProyek, n int) {
 		A[i] = temp
 		pass = pass + 1
 	}
-	tampilkanSemuaProyek(data, nData)
 
 }
 
